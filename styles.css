@@ -1,0 +1,986 @@
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: #1a1a1a;
+  color: #fff;
+  transition: background-color 0.3s, color 0.3s;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0); /* Membuat latar belakang transparan */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.3s; /* Transisi halus saat mengganti warna latar */
+}
+
+.header .logo {
+  display: flex;
+  align-items: center;
+}
+
+.header .logo img {
+  height: 30px;
+  margin-right: 10px;
+}
+
+.header .logo span {
+  color: #ff0000;
+  font-weight: bold;
+}
+
+.logo-container img {
+  height: 70px;
+  width: 120px;
+}
+
+:root {
+  --main-color: #007bff; /* Warna biru sebagai warna utama */
+}
+
+.social {
+  display: flex;
+  justify-content: center; /* Mengatur ikon berada di tengah */
+  align-items: center;
+  margin: 20px 0;
+}
+
+.social a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem; /* Ukuran ikon yang proporsional */
+  padding: 0.5rem;
+  margin: 0 1rem; /* Jarak antar ikon */
+  background: transparent;
+  border: 2px solid red;
+  border-radius: 50%;
+  color: red;
+  transition: 0.3s ease;
+  position: relative; /* Untuk latar belakang efek hover */
+}
+
+.social a:hover {
+  color: #fff; /* Warna ikon berubah menjadi putih */
+  transform: scale(1.2) translateY(-5px); /* Ikon membesar sedikit dan naik */
+  box-shadow: 0 0 15px red; /* Efek shadow untuk tampilan profesional */
+}
+
+/* Efek latar belakang untuk ikon sosial media */
+.social a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0); /* Transparan */
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.header .dark-mode-toggle {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.header .dark-mode-toggle span {
+  margin-right: 10px;
+}
+.main-content {
+  padding: 80px 20px 20px 20px;
+}
+.welcome-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.welcome-section h1 {
+  color: #00ff00;
+  animation: fadeIn 1s ease-in-out;
+}
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.icon-grid .icon-card {
+  background-color: #333;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+}
+.icon-grid .icon-card:hover {
+  transform: scale(1.05);
+  background-color: #444;
+}
+.icon-grid .icon-card i {
+  font-size: 30px;
+  color: #ff0000;
+  margin-bottom: 10px;
+}
+.icon-grid .icon-card p {
+  margin: 0;
+}
+.content-section {
+  background-color: #fff;
+  color: #000;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  animation: fadeInUp 0.5s ease-in-out;
+}
+.content-section h2 {
+  margin: 0 0 10px 0;
+}
+.content-section p {
+  margin: 0;
+}
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f4f0f0;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 40px);
+  z-index: 1000;
+  border-radius: 20px;
+  box-sizing: border-box;
+  max-width: 1200px;
+}
+.footer .footer-item {
+  text-align: center;
+  cursor: pointer;
+}
+.footer .footer-item i {
+  display: block;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+@media only screen and (max-width: 768px) {
+  .footer {
+    padding: 5px 15px;
+    width: calc(100% - 30px);
+    border-radius: 15px;
+  }
+  .footer .footer-item i {
+    font-size: 18px;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.dark-mode .content-section {
+  background-color: #333;
+  color: #fff;
+}
+
+.footer-light {
+  background-color: #333 !important;
+  color: #fff !important;
+}
+header {
+  display: flex;
+  justify-content: space-between; /* Menyebar konten di antara kiri dan kanan */
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo-container img {
+  height: 70px;
+  width: 120px;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+}
+
+.social a {
+  margin-right: 20px; /* Jarak antara ikon sosial media */
+  color: #fff;
+  font-size: 20px;
+}
+
+.social a:last-child {
+  margin-right: 0; /* Hilangkan jarak pada ikon terakhir */
+}
+
+/* Untuk responsif, jika ingin logo lebih kecil di layar kecil */
+@media only screen and (max-width: 768px) {
+  .logo-container img {
+    height: 50px;
+    width: 90px;
+  }
+}
+
+.menu-container {
+  display: flex;
+  align-items: center;
+}
+.menu-container .bx-menu {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+.navbar {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.navbar li {
+  margin: 0 10px;
+}
+.navbar a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+.navbar .bx-moon {
+  font-size: 20px;
+  cursor: pointer;
+}
+.home {
+  display: flex;
+  flex-direction: row; /* Mengatur arah elemen menjadi baris */
+  align-items: center;
+  justify-content: center;
+  text-align: left; /* Mengubah teks agar rata kiri */
+  padding: 100px 20px;
+  gap: 20px; /* Tambahkan jarak antara gambar dan teks */
+}
+
+.home-img {
+  flex: 1; /* Mengatur gambar untuk menempati satu bagian dari konten */
+}
+
+.home-img img {
+  width: 32vw;
+  border-radius: 50%;
+  box-shadow: 0 0 25px red;
+  transition: 0.4s ease-in-out;
+}
+.home-img img:hover {
+  box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color), 0 0 100px var(--main-color);
+}
+
+.home-text {
+  flex: 1; /* Mengatur teks untuk menempati satu bagian dari konten */
+}
+
+.home-text span {
+  font-size: 20px;
+}
+
+.home-text h1 {
+  font-size: 40px;
+  margin: 10px 0;
+}
+
+.home-text h2 {
+  font-size: 30px;
+  margin: 10px 0;
+}
+
+.home-text p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.home-text .btn {
+  padding: 10px 20px;
+  background-color: #ff0000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.home-text .btn:hover {
+  background-color: #cc0000;
+}
+
+/* Responsif untuk layar lebih kecil */
+@media only screen and (max-width: 768px) {
+  .home {
+    flex-direction: column; /* Ubah arah menjadi kolom pada layar kecil */
+    text-align: center; /* Kembalikan teks menjadi rata tengah pada layar kecil */
+  }
+
+  .home-img {
+    margin-bottom: 20px; /* Tambahkan jarak di bawah gambar */
+  }
+}
+
+.about-text {
+  max-width: 600px;
+  text-align: left;
+}
+.skills-text {
+  max-width: 600px;
+  text-align: left;
+}
+.services-text {
+  max-width: 600px;
+  text-align: left;
+}
+.portfolio-text {
+  max-width: 600px;
+  text-align: left;
+}
+.contact {
+  color: #fff;
+  padding: 40px 20px;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.heading h2 {
+  font-size: 2.5rem;
+}
+
+.heading span {
+  color: #ff0000;
+  font-size: 1rem;
+}
+
+.about-container,
+.skills-container,
+.services-content,
+.portfolio-content,
+.contact-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.about-img img,
+.skills-img img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  margin: 20px;
+}
+.about-text,
+.skills-container .bars,
+.services-content .services-box,
+.portfolio-content .portfolio-img,
+.contact-form form {
+  max-width: 600px;
+  margin: 20px;
+}
+.about-text p,
+.skills-container .bars-box,
+.services-content .services-box,
+.portfolio-content .portfolio-img,
+.contact-form form input,
+.contact-form form textarea {
+  margin: 10px 0;
+}
+.about-text .information .info-box,
+.skills-container .bars-box,
+.services-content .services-box,
+.portfolio-content .portfolio-img,
+.contact-form form input,
+.contact-form form textarea {
+  display: flex;
+  align-items: center;
+}
+.about-text .information .info-box i,
+.skills-container .bars-box h3,
+.services-content .services-box i,
+.portfolio-content .portfolio-img img,
+.contact-form form input,
+.contact-form form textarea {
+  margin-right: 10px;
+}
+.about-text .information .info-box span,
+.skills-container .bars-box span,
+.services-content .services-box h3,
+.portfolio-content .portfolio-img img,
+.contact-form form input,
+.contact-form form textarea {
+  font-size: 16px;
+}
+.skills-container .bars-box .light-bar,
+.skills-container .bars-box .percent-bar {
+  height: 10px;
+  border-radius: 5px;
+}
+.skills-container .bars-box .light-bar {
+  background-color: #ccc;
+  width: 100%;
+}
+.skills-container .bars-box .percent-bar {
+  background-color: #ff0000;
+  position: relative;
+  top: -10px;
+}
+.skills-container .bars-box .html-bar {
+  width: 94%;
+}
+.skills-container .bars-box .css-bar {
+  width: 84%;
+}
+.skills-container .bars-box .js-bar {
+  width: 74%;
+}
+.skills-container .bars-box .react-bar {
+  width: 80%;
+}
+.services-content .services-box {
+  flex: 1;
+  min-width: 200px;
+  padding: 20px;
+  background-color: #333;
+  border-radius: 10px;
+  transition: transform 0.3s, background-color 0.3s;
+}
+.services-content .services-box:hover {
+  transform: scale(1.05);
+  background-color: #444;
+}
+.services-content .services-box i {
+  font-size: 30px;
+  color: #ff0000;
+  margin-bottom: 10px;
+}
+.services-content .services-box a {
+  text-decoration: none;
+  color: #ff0000;
+  font-weight: bold;
+}
+.portfolio-content .portfolio-img img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  margin: 10px;
+}
+.contact-form form input,
+.contact-form form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.contact-form form .contact-button {
+  padding: 10px 20px;
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.contact-form form .contact-button:hover {
+  background-color: #cc0000;
+}
+.footer-light {
+  background-color: #333 !important;
+  color: #fff !important;
+}
+.footer .footer-social a {
+  margin: 0 10px;
+  color: #fff;
+  font-size: 20px;
+}
+.copyright {
+  text-align: center;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+}
+@media (max-width: 768px) {
+  .menu-container .bx-menu {
+    display: block;
+  }
+  .navbar {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  .navbar li {
+    margin: 10px 0;
+  }
+  .navbar.show {
+    display: flex;
+  }
+}
+
+.about-text {
+  flex: 1; /* Mengatur teks untuk menempati satu bagian dari konten */
+  margin-right: 20px; /* Memberikan jarak antara teks dan gambar */
+}
+
+.about-img {
+  flex: 1; /* Mengatur gambar untuk menempati satu bagian dari konten */
+}
+
+.about-img img {
+  width: 100%; /* Mengatur lebar gambar menjadi 100% dari kontainer */
+  max-width: 400px; /* Mengatur lebar maksimal gambar */
+  border-radius: 10px; /* Menambahkan sudut melingkar pada gambar */
+}
+
+.about-img img {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  border: 5px solid #ff0000; /* Add a border to the image for emphasis */
+}
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-img img {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .home-text {
+    max-width: 100%;
+  }
+}
+
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 40px 20px;
+}
+
+.about-img {
+  order: 2; /* Menempatkan gambar di sebelah kanan */
+  flex: 1;
+  text-align: right; /* Agar gambar sejajar ke kanan */
+}
+
+/* Left Section (Image) */
+.about-img img {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  border: 5px solid #ff0000; /* Add a border to the image for emphasis */
+}
+
+.about-text {
+  order: 1; /* Menempatkan teks di sebelah kiri */
+  flex: 1;
+  margin-right: 20px; /* Beri jarak antara teks dan gambar */
+}
+
+.about-img img:hover {
+  box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color), 0 0 100px var(--main-color);
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: linear-gradient(45deg, #00fbff, #ff0000); /* Warna gradien biru */
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 50px; /* Membuat sudut melingkar */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+  transition: all 0.3s ease;
+  text-decoration: none; /* Menghilangkan garis bawah */
+  font-size: 16px;
+}
+
+.btn:hover {
+  background: linear-gradient(45deg, #04ffe2, #d10000); /* Perubahan warna saat hover */
+  transform: translateY(-5px); /* Efek hover untuk mengangkat tombol */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Bayangan lebih besar saat hover */
+}
+
+.btn:active {
+  transform: translateY(0); /* Mengembalikan posisi saat tombol ditekan */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Mengurangi bayangan saat tombol ditekan */
+}
+
+.home-text {
+  max-width: 600px;
+  text-align: left;
+}
+
+.about-text {
+  max-width: 600px;
+  text-align: left;
+}
+
+.information {
+  margin-top: 20px;
+}
+
+.info-box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.info-box span {
+  font-size: 1.1rem;
+}
+
+.info-box i {
+  font-size: 1.5rem;
+  color: #ff0000;
+  margin-right: 10px;
+}
+
+.btn {
+  margin-top: 20px;
+  display: inline-block;
+  padding: 12px 30px;
+  background: linear-gradient(45deg, #ff0000, #00bfff);
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.span {
+  padding: 100px;
+}
+
+.skills-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  position: relative;
+  height: 100vh;
+}
+
+/* Container for the image and icons */
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Centered image */
+.skills-image img {
+  width: 30vw; /* Ukuran gambar yang lebih besar */
+  height: auto; /* Menjaga rasio aspek gambar */
+  z-index: 1;
+}
+
+/* Circular layout for the icons */
+.skills-grid {
+  position: absolute;
+  width: 70vw; /* Ukuran lingkaran yang lebih besar */
+  height: 70vw; /* Ukuran lingkaran yang lebih besar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+  animation: rotate 10s infinite linear; /* Animasi untuk rotasi */
+}
+
+/* Rotating animation */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Icon positioning in a circular pattern */
+.skill-box {
+  position: absolute;
+  width: 70px; /* Ukuran ikon yang lebih besar */
+  height: 70px; /* Ukuran ikon yang lebih besar */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s;
+}
+
+/* Prevent icons and text from rotating */
+.skill-box i,
+.skill-box h3 {
+  transform: rotate(0deg); /* Mencegah rotasi agar tidak terbalik */
+}
+
+/* Icon and text styling */
+.skill-box i {
+  font-size: 35px; /* Ukuran font ikon yang lebih besar */
+  color: white;
+}
+
+.skill-box h3 {
+  font-size: 14px; /* Ukuran font teks yang lebih besar */
+  margin: 5px 0 0;
+  color: white;
+  text-align: center;
+}
+
+/* Specific positioning of icons around the circle using trigonometric functions */
+.skill-box:nth-child(1) {
+  transform: translate(-200px, -200px);
+} /* 45 degrees */
+.skill-box:nth-child(2) {
+  transform: translate(0px, -240px);
+} /* 90 degrees */
+.skill-box:nth-child(3) {
+  transform: translate(200px, -200px);
+} /* 135 degrees */
+.skill-box:nth-child(4) {
+  transform: translate(240px, 0px);
+} /* 180 degrees */
+.skill-box:nth-child(5) {
+  transform: translate(200px, 200px);
+} /* 225 degrees */
+.skill-box:nth-child(6) {
+  transform: translate(0px, 240px);
+} /* 270 degrees */
+.skill-box:nth-child(7) {
+  transform: translate(-200px, 200px);
+} /* 315 degrees */
+.skill-box:nth-child(8) {
+  transform: translate(-240px, 0px);
+} /* 0 degrees */
+.skill-box:nth-child(9) {
+  transform: translate(-140px, -100px);
+} /* Mid-left */
+.skill-box:nth-child(10) {
+  transform: translate(100px, -140px);
+} /* Mid-top */
+.skill-box:nth-child(11) {
+  transform: translate(100px, 140px);
+} /* Mid-bottom */
+.skill-box:nth-child(12) {
+  transform: translate(-140px, 100px);
+} /* Mid-right */
+.skill-box:nth-child(13) {
+  transform: translate(0px, -200px);
+} /* Next.js (tambahan) */
+
+/* Efek hover agar ikon membesar sedikit saat di-hover */
+.skill-box:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .skills-grid {
+    width: 60vw; /* Ukuran lingkaran */
+    height: 60vw; /* Ukuran lingkaran */
+  }
+
+  .skills-image img {
+    width: 100px; /* Ukuran gambar di perangkat kecil */
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-grid {
+    width: 200px; /* Ukuran lingkaran untuk perangkat kecil */
+    height: 200px; /* Ukuran lingkaran untuk perangkat kecil */
+  }
+
+  .skill-box {
+    width: 40px;
+    height: 40px;
+  }
+
+  .skills-image img {
+    width: 100px; /* Ukuran gambar di perangkat kecil */
+    height: auto;
+  }
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px; /* Space between the profile and the form */
+}
+
+.profile-card img.profile-image {
+  width: 500px;
+  height: 220px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.profile-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.profile-card p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  color: #fff;
+  margin-right: 15px;
+  font-size: 1.2rem;
+}
+
+.social-icons a:hover {
+  color: #ff0000;
+}
+
+/* Right Section (Form) */
+.contact-form {
+  background-color: #2d2d34;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 500px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #1f1f24;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #aaa;
+}
+
+.contact-form .form-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.contact-form .form-group input {
+  width: 48%;
+}
+
+.contact-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  pointer-events: auto; /* Pastikan pointer events diizinkan */
+  opacity: 1; /* Pastikan tombol terlihat */
+}
+
+button.contact-button {
+  z-index: 1; /* Pastikan tombol berada di atas */
+}
+
+.contact-button:hover {
+  background-color: #d60000;
+}
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-profile,
+  .contact-form {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .contact-profile-text {
+    max-width: 600px;
+    text-align: left;
+  }
+
+  .contact-form .form-group {
+    flex-direction: column;
+  }
+
+  .contact-form .form-group input {
+    width: 100%;
+  }
+}
+
+#typing-text {
+  overflow: hidden; /* hide the text initially */
+  animation: typing 2s steps(40, end) infinite; /* animate the text */
+  white-space: pre; /* preserve whitespace and line breaks */
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
